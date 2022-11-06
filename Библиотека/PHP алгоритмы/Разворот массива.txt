@@ -1,0 +1,11 @@
+$string = "Hello World!";
+$array = str_split($string);
+$mas = [];
+
+for ($i = iconv_strlen($string) - 1; $i >= 0; $i--){
+
+    array_push($mas, $array[$i]);
+}
+
+$string = implode($mas);
+echo $string;

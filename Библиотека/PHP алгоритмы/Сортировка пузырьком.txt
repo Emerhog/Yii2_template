@@ -1,0 +1,15 @@
+$array = [99,45,89,9,8,12,4,67,6,90];
+
+for ($i = 0; $i < count($array) - 1; $i++){
+
+    for ($j = 0; $j < count($array) - 1 - $i; $j++){
+
+        if ($array[$j + 1] < $array[$i]) {
+            list($array[$i], $array[$j + 1]) = array($array[$j + 1], $array[$i]);
+        }
+    }
+}
+
+foreach($array as $e){
+    echo $e . "<br>";
+}

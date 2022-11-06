@@ -1,0 +1,28 @@
+$array = [1, 5, 6, 7, 9, 23, 78, 86, 95, 98, 111, 145];
+$number = 95;
+
+function binarySearch($array, int $search, int $start = 0, int $end = null): int{
+    if($end === null){
+        $end = count($array) - 1;
+    }
+
+    if($start > $end){
+        throw LogicException("Item not found");
+    }
+
+    $halfIndex = (int) ($start + $end) / 2;
+
+    if($array[$halfIndex] !== $search){
+        if($array[$halfIndex] < $search){
+            $start = $halfIndex + 1;
+        }
+        else{
+            $end = $halfIndex - 1;
+        }
+        return binarySearch($array, $search, $start, $end);
+    }
+
+    return $halfIndex;
+}
+
+echo binarySearch($array, $number);

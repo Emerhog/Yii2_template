@@ -1,0 +1,16 @@
+composer create-project laravel/laravel:^8.0 MyApp - установка
+_____________________________________
+
+composer require laravel/ui	- аутентификация
+php artisan ui vue --auth
+php artisan migrate
+_____________________________________
+php artisan migrate:refresh - обновление всех миграций
+php artisan migrate 	    - подтверждение готовых миграций
+php artisan migrate:rollback --step=5 - откат миграций на 5 шагов
+php artisan migrate:reset   - откат всех миграций
+_____________________________________
+php artisan make:model MyModel -mcr - создание миграции, контроллера, ресурс контр.
+php artisan make:model Todo -a - тоже самое что "-mcr", "-a" значит all
+php artisan make:migration create_flights_table - создание миграции
+php artisan make:model UserModel -m - создание модели и миграции

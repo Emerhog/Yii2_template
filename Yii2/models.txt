@@ -1,0 +1,16 @@
+namespace app\models;
+
+use yii\base\Model;
+
+class ContactForm extends Model
+{
+    public $name;
+    public $email;
+    public $subject;
+    public $body;
+}
+
+у класса модели ContactForm , который находится ниже, четыре 
+атрибута: name, email, subject и body. 
+Модель ContactForm используется для представления входных данных, 
+полученных из HTML формы.

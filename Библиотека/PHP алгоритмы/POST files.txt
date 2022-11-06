@@ -1,0 +1,29 @@
+<form action="lesson_class.php" method="POST" enctype="multipart/form-data">
+<input type="file" name="picture"><br>
+<button type="submit">Send</button>
+</form>
+
+<?php
+    $img = $_FILES['picture'];
+    $sImage = "data:". $img['size'] .";base64,". base64_encode(file_get_contents($img['tmp_name'])); // 2 Варианта
+    $sImage = "data:image/jpeg;base64,". base64_encode(file_get_contents($img['tmp_name']));
+    echo '<img src="'. $sImage .'" alt="">';
+?>
+______________________________________________________________________
+
+<form action="func.php" method="POST" enctype="multipart/form-data">
+<input type="file" name="picture"><br>
+<button type="submit">Send</button>
+</form>
+
+<?php
+if($_FILES){
+    $img = $_FILES['picture'];
+    $sImage = "data:".$img['type'].";base64,". base64_encode(file_get_contents($img['tmp_name']));
+    echo '<video controls="" autoplay="" name="media"><source src="'.$sImage.'" type="audio/mp3"></video>'; // 2 Варианта
+    echo '<video controls="" autoplay="" name="media"><source src="'.$sImage.'"></video>';
+}
+______________________________________________________________________
+
+
+

@@ -1,0 +1,24 @@
+yii migrate/create <name>
+
+Требуемый аргумент name даёт краткое описание новой миграции. 
+Например, если миграция о создании новой таблицы с именем news, 
+вы можете использовать имя create_news_table
+
+yii migrate/create create_news_table
+______________________________
+
+yii migrate/redo        # перезагрузить последнюю применённую миграцию
+yii migrate/down     	# отменяет самую последнюю применённую миграцию
+yii migrate/history 5   # показать последних 5 применённых миграций
+yii migrate/new 5       # показать первых 5 новых миграций
+yii migrate        	# запустить миграцию
+______________________________
+
+    public function safeUp()
+    {
+        $this->createTable('contact', [
+            'id' => $this->primaryKey(),
+            'title' => $this->string(12)->notNull()->unique(),
+            'content' => $this->text()
+        ]);
+    }

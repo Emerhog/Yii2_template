@@ -1,0 +1,10 @@
+SELECT user, COUNT(user) FROM `user_time` GROUP BY user - Подсчет пользователей с их именами
+__________________________________________________________________
+SELECT user, MAX(date_time)-MIN(date_time) FROM `user_time` GROUP BY user
+__________________________________________________________________
+SELECT USER, DAY(MAX(date_time))-DAY(MIN(date_time)) FROM `user_time` GROUP BY USER - Максимальная длительность сессии юзера в днях
+__________________________________________________________________
+SELECT id, user,
+MAX(date_time) OVER (PARTITION BY user)		- Все юзеры и их МАКС время
+FROM user_time
+__________________________________________________________________

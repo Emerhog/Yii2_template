@@ -1,0 +1,32 @@
+FROM <Название имейджа языка>
+WORKDIR /app
+RUN <Загрузка перед развёрткой>
+COPY . /app
+EXPOSE <Номер порта контейнера>
+CMD [ "php", "./index.php" ]
+______________________________________________________________
+
+docker - команды докера
+docker version - версия
+docker build . - билд в терминале VS code образа имейдж
+docker build -t logsapp:ecx . - билд в терминале VS code образа имейдж имя:версия(тэг)
+docker image ls - посмотреть имейджи
+docker image prune - удалить все имейджи
+docker rmi <ID> - удалить один имейдж
+docker run <ID> - создание контейнера на основе ID имейджа	!IMAGE!
+docker run -d -p <Порт на машине>:<Порт внутри контейнера> --rm --name myapp <ID>/<NAME>:<TAG> - создание контейнера на серваке  !IMAGE!
+docker pull php - загрузить пхп ласт версии
+docker images - просмотр статичных имейджов
+docker ps - список всех запущенных контейнеров
+docker ps -a - список всех контейнеров
+docker rm <ID> - удалить контейнер по id
+docker rmi <NAME> - удалить имейдж
+docker container prune - удалить все контейнеры
+docker start <ID>/<NAME> - запуск контейнера	!CONTAINER!
+docker stop <ID>/<NAME> - остановка контейнера	!CONTAINER!
+
+______________________________________________________________
+
+docker login
+docker push emerhog/myapp
+docker pull emerhog/myapp

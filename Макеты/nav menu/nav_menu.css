@@ -1,0 +1,143 @@
+body {
+    margin-top: 9vh;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+header{
+    background-color: red;
+    width: 100%;
+    height: 9vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 1vh 5vh 1vh 5vh;
+}
+
+.container{
+    background-color: blue;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+.nav_menu{
+    display: flex;
+    flex-direction: row;
+}
+
+.logo{
+    max-width: 7vh;
+    margin-left: 5vh;
+}
+
+.nav_links{
+    margin: auto;
+    width: 80%;
+    height: 5vh;
+    background-color: pink;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 5px;
+}
+
+.nav_links a{
+    width: 18%;
+    font-size: 25px;
+}
+
+.nav_links a:hover{
+    color: orange;
+}
+
+.header_burger{
+    display: none;
+}
+
+@media (max-width: 767px){
+
+    .header_burger{
+        display: block;
+        position: relative;
+        width: 30px; 
+        height: 20px;
+        z-index: 2;
+        margin: 2vh 1vh 0 auto;
+    }
+    .header_burger span{
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        top: 9px;
+        background-color: white;
+        transition: all 0.3s ease 0s;
+    }
+    .header_burger::before,
+    .header_burger::after{
+        content: '';
+        background-color: white;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        transition: all 0.3s ease 0s;
+    }
+    .header_burger::before{
+        top: 0;
+    }
+    .header_burger::after{
+        bottom: 0;
+    }
+
+    .logo{
+        margin-left: 0;
+        z-index: 2;
+    }
+
+    .nav_links{
+        margin-top: 9vh;
+        width: 100%;
+        position: fixed;
+        top: -100%;
+        left: 0;
+        height: 100%;
+        background-color: aqua;
+        display: flex;
+        flex-direction: column;
+        justify-content:space-around;
+        transition: all 0.3s ease 0s;
+        padding: 10vh 1vh 15vh 1vh;
+    }
+    .nav_links a{
+        width: 50%;
+        height: 7vh;
+        text-align: center;
+        margin: auto;
+        font-size: 35px;
+    }
+
+    /* animation */
+    .header_burger.active span{
+        transform: scale(0);
+    }
+    .header_burger.active:before{
+        transform: rotate(45deg);
+        top: 9px;
+
+    }
+    .header_burger.active:after{
+        transform: rotate(-45deg);
+        bottom: 9px;
+
+    }
+
+    .nav_links.active{
+        top: 0;
+        padding: 10vh 1vh 15vh 1vh;
+    }
+}

@@ -1,0 +1,9 @@
+public function actionIndex()
+    {
+        return $this->render('index');
+	return $this->redirect('https://index.com');
+	return $this->render('contact', ['model' => $model]);
+    }
+
+________________________________________
+
